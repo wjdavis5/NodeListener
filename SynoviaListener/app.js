@@ -2,9 +2,10 @@
 var Cluster = require("cluster");
 var Os = require("os");
 var Workers = Os.cpus().length;
-var dgram = require("dgram");
-var server = dgram.createSocket("udp4");
-var port = 20500;
+
+
+
+
 var CalAmpListener = new Listener("Calamp", 20500);
 var MicronetListener = new Listener("Micronet", 20800);
 
@@ -19,7 +20,7 @@ if (Cluster.isMaster) {
     }
 } else {
     CalAmpListener.Start();
-    MicronetListener.Start();
+//    MicronetListener.Start();
 }
 
 

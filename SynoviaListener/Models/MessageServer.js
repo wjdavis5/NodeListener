@@ -46,12 +46,13 @@ MessageServer.prototype.Bind = function () {
 };
 MessageServer.prototype.OnReceive = function (message, info) {
     var msg = new Message(message, info.address, info.port);
+    console.log(this.Name + " message Rx");
     this.MessageQueue.Add(msg);
     if (typeof this.MessageReceiveCallBack != "undefined") this.MessageReceiveCallBack(msg, info);
 };
 MessageServer.prototype.OnBind = function () {
     var address = this.Datagram.address();
-    console.log("server listening " + address.address + ":" + address.port);
+    console.log(this.Name + " server listening " + address.address + ":" + address.port);
     if (typeof this.BindCallBack != "undefined") this.BindCallBack(this.Datagram);
 };
 MessageServer.prototype.OnError = function(error, datagram) {

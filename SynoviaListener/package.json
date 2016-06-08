@@ -1,0 +1,10 @@
+{
+  "name": "synovia-listener",
+  "version": "0.0.0",
+  "description": "SynoviaListener",
+  "main": "app.js",
+  "author": {
+    "name": "William Davis",
+    "email": ""
+  }
+}

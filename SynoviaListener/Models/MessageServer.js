@@ -39,11 +39,7 @@ function MessageServer(name,
 
 MessageServer.prototype.Bind = function () {
     console.log(this.Name + " binding to port: " + this.Port);
-    this.Datagram.bind({
-        address: "localhost",
-        port: this.Port,
-        exclusive: false
-    });
+    this.Datagram.bind(this.Port);
 };
 MessageServer.prototype.OnReceive = function (message, info) {
     var msg = new Message(message, info.address, info.port);

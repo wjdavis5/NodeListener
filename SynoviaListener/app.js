@@ -5,17 +5,8 @@ var Workers = Os.cpus().length;
 var dgram = require("dgram");
 var server = dgram.createSocket("udp4");
 var port = 20500;
-Cluster.on("fork", function(worker) {
-    //console.log(worker);
-});
-Cluster.on("listening", function(worker, address) {
-console.log(
-    "a");
-});
-Cluster.on("error", function (worker) {
-    console.log(
-        worker);
-});
+var CalAmpListener = new Listener("Calamp", 20500);
+var MicronetListener = new Listener("Micronet", 20800);
 
 if (Cluster.isMaster) {
     // Fork workers.
@@ -27,13 +18,8 @@ if (Cluster.isMaster) {
         });
     }
 } else {
-   /* var CalAmpListener = new Listener("Calamp", 20500);
-    var MicronetListener = new Listener("Micronet", 20800);
     CalAmpListener.Start();
     MicronetListener.Start();
-    */
-    console.log(port++);
-   server.bind(port++);
 }
 
 

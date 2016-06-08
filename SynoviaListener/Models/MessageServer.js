@@ -38,6 +38,7 @@ function MessageServer(name,
 }
 
 MessageServer.prototype.Bind = function () {
+    console.log(this.Name + " binding to port: " + this.Port);
     this.Datagram.bind({
         address: "localhost",
         port: this.Port,

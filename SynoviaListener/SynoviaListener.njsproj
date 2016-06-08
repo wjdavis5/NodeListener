@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="Models\CalampOptionHeader.js" />
     <Compile Include="Models\Listener.js" />
     <Compile Include="Models\Message.js" />
     <Compile Include="Models\MessageProcessor.js" />

@@ -20,7 +20,7 @@ if (Cluster.isMaster) {
     }
 } else {
     CalAmpListener.Start();
-//    MicronetListener.Start();
+    MicronetListener.Start();
 }
 
 
